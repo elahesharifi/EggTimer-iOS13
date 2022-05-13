@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let eggTimes = ["Soft":300, "Medium":420, "Hard":720]
+    @IBOutlet weak var statusLabel: UILabel!
     var secondRemaining = 60
     var timer = Timer()
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         let hardness = sender.currentTitle! //Soft , Medium , Hard
         secondRemaining = eggTimes[hardness]!
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+       
     }
     @objc func updateTimer(){
         if secondRemaining > 0 {
