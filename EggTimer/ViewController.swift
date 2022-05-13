@@ -12,11 +12,15 @@ class ViewController: UIViewController {
     
     let eggTimes = ["Soft":300, "Medium":420, "Hard":720]
     var secondRemaining = 60
+    var timer = Timer()
+    
     @IBAction func hardnessSelected(_ sender: UIButton) {
+        
+        timer.invalidate() //set timer with 0 amount that every time selected or we can say reset it
         
         let hardness = sender.currentTitle! //Soft , Medium , Hard
         secondRemaining = eggTimes[hardness]!
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     @objc func updateTimer(){
         if secondRemaining > 0 {
