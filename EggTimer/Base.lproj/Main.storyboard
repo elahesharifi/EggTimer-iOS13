@@ -151,6 +151,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progreeBarView" destination="ACC-c7-o0w" id="gKP-ho-tzw"/>
                         <outlet property="statusLabel" destination="XLm-5r-pSP" id="sAn-tW-mZT"/>
                     </connections>
                 </viewController>

@@ -11,13 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var progreeBarView: UIProgressView!
     
     let eggTimes = ["Soft":3, "Medium":4, "Hard":7]
     var secondRemaining = 60
     var timer = Timer()
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
-        
         timer.invalidate() //set timer with 0 amount that every time selected or we can say reset it
         
         let hardness = sender.currentTitle! //Soft , Medium , Hard
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         }else{
             timer.invalidate()
             statusLabel.text = "Done!"
-        
+            
         }
     }
 
