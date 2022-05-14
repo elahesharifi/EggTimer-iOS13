@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var timer = Timer()
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
+       
+        progreeBarView.progress = 1.0
         timer.invalidate() //set timer with 0 amount that every time selected or we can say reset it
         
         let hardness = sender.currentTitle! //Soft , Medium , Hard
